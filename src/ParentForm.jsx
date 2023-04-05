@@ -3,10 +3,10 @@
 import React from "react";
 
 function ParentForm(props) {
-    return <div>
+    return <div className="grid grid-cols-3 my-3">
 
-        <label>{props.label}</label>
-        <input placeholder={props.placeholder} type={props.type} value={props.value} onChange={props.handleChange} />
+        <label className="col-span-1">{props.label}</label>
+        <input className="col-span-2" placeholder={props.placeholder} type={props.type} value={props.value} onChange={props.handleChange} />
 
     </div>
 }

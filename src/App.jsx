@@ -8,8 +8,10 @@ function App() {
   return (
     <div>
 
-    <AllInformation />
-    
+      <img src="/pics/registerPic.jpeg" alt="school-pic" />
+
+      <AllInformation />
+
     </div>
   )
 }

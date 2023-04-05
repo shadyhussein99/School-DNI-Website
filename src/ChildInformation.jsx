@@ -9,35 +9,35 @@ function ChildInformation(props) {
 
         <ChildForm 
             label="School Fees (Child 1)"
-            feesValue={child1FeesInput}
-            feesChange={(e) => setChild1FeesInput(e.target.value)}
-            sumInsured={child1FeesInput * 5}
-            schoolChange={(e) => setChild1SchoolInput(e.target.value)}
-            schoolValue={child1SchoolInput}
+            feesValue={props.child1FeesInput}
+            feesChange={(e) => props.setChild1FeesInput(e.target.value)}
+            sumInsured={props.child1FeesInput * 5}
+            schoolChange={(e) => props.setChild1SchoolInput(e.target.value)}
+            schoolValue={props.child1SchoolInput}
         />
         <ChildForm 
             label="School Fees (Child 2)"
-            feesValue={child2FeesInput}
-            feesChange={(e) => setChild2FeesInput(e.target.value)}
-            sumInsured={child2FeesInput * 5}
-            schoolChange={(e) => setChild2SchoolInput(e.target.value)}
-            schoolValue={child2SchoolInput}
+            feesValue={props.child2FeesInput}
+            feesChange={(e) => props.setChild2FeesInput(e.target.value)}
+            sumInsured={props.child2FeesInput * 5}
+            schoolChange={(e) => props.setChild2SchoolInput(e.target.value)}
+            schoolValue={props.child2SchoolInput}
         />
         <ChildForm 
             label="School Fees (Child 3)"
-            feesValue={child3FeesInput}
-            feesChange={(e) => setChild3FeesInput(e.target.value)}
-            sumInsured={child3FeesInput * 5}
-            schoolChange={(e) => setChild3SchoolInput(e.target.value)}
-            schoolValue={child3SchoolInput}
+            feesValue={props.child3FeesInput}
+            feesChange={(e) => props.setChild3FeesInput(e.target.value)}
+            sumInsured={props.child3FeesInput * 5}
+            schoolChange={(e) => props.setChild3SchoolInput(e.target.value)}
+            schoolValue={props.child3SchoolInput}
         />
         <ChildForm 
             label="School Fees (Child 4)"
-            feesValue={child4FeesInput}
-            feesChange={(e) => setChild4FeesInput(e.target.value)}
-            sumInsured={child4FeesInput * 5}
-            schoolChange={(e) => setChild4SchoolInput(e.target.value)}
-            schoolValue={child4SchoolInput}
+            feesValue={props.child4FeesInput}
+            feesChange={(e) => props.setChild4FeesInput(e.target.value)}
+            sumInsured={props.child4FeesInput * 5}
+            schoolChange={(e) => props.setChild4SchoolInput(e.target.value)}
+            schoolValue={props.child4SchoolInput}
         />
 
     </div>

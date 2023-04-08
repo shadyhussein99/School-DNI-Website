@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
+import Proposal from './Proposal';
 
 import {
   createBrowserRouter,
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/ proposal",
+    element: <Proposal />,
   },
 ]);
 

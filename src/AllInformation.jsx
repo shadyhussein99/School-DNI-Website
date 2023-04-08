@@ -1,13 +1,11 @@
 //  Component containing all information about Parent and Childs
 
 import React, { useState } from "react";
-import { useForm } from "react-hook-form"
+import { Link } from "react-router-dom";
 import ParentInformation from "./ParentInformation";
 import ChildInformation from "./ChildInformation";
 
 function AllInformation() {
-
-    const { register, handleSubmit, errors } = useForm()
 
     //  Parent information input stats
 
@@ -15,7 +13,7 @@ function AllInformation() {
     const [parentBirthDateInput, setParentBirthDateInput] = useState("")   // Tracks Parent Birth Date input
     const [parentEmailInput, setParentEmailInput] = useState("")           // Tracks Parent Email input
     const [parentMobileInput, setParentMobileInput] = useState("")         // Tracks Parent Mobile input
-    const [parentGenderInput, setParentGenderInput] = useState("")         // Tracks Parent Gender input
+    const [parentGenderInput, setParentGenderInput] = useState("Male")         // Tracks Parent Gender input
 
 
     //  Childs information input stats
@@ -38,74 +36,21 @@ function AllInformation() {
 
     const [sumTotalFees, setSumTotalFees] = useState(0)
 
+    const [accepted, setAccepted] = useState(false)
 
-    // Saved input stats for parents and childs on clicking (Submit) button
-
-    const [parentNameSaved, setParentNameSaved] = useState("")             // Saved Parent Name input
-    const [parentBirthDateSaved, setParentBirthDateSaved] = useState("")   // Saved Parent Birth Date input
-    const [parentEmailSaved, setParentEmailSaved] = useState("")           // Saved Parent Email input
-    const [parentMobileSaved, setParentMobileSaved] = useState("")         // Saved Parent Mobile input
-    const [parentGenderSaved, setParentGenderSaved] = useState("")         // Saved Parent Gender input
-
-   // const [child1FeesSaved, setChild1FeesSaved] = useState("")        // Saved child 1 fees input
-    const [child1SchoolSaved, setChild1SchoolSaved] = useState("")    // Saved child 1 school input
-
-   // const [child2FeesSaved, setChild2FeesSaved] = useState("")        // Saved child 2 fees input
-    const [child2SchoolSaved, setChild2SchoolSaved] = useState("")    // Saved child 2 school input
-
-   // const [child3FeesSaved, setChild3FeesSaved] = useState("")        // Saved child 3 fees input
-    const [child3SchoolSaved, setChild3SchoolSaved] = useState("")    // Saved child 3 school input
-
-   // const [child4FeesSaved, setChild4FeesSaved] = useState("")        // Saved child 4 fees input
-    const [child4SchoolSaved, setChild4SchoolSaved] = useState("")    // Saved child 4 school input
-
-    const [sumTotalFeessaved, setSumTotalFeesSaved] = useState("")
-
-
-    const [data, setData] = useState({
-        parentName: "",
-        parentBirthDate: "",
-        parentEmail: "",
-        parentMobile: "",
-        parentGender: "",
-        setSumTotalFees: ""
-    })
-
-
-    const handleClick = (e) => {
-
-setData.parentName(parentNameInput)
-setData.parentBirthDate(parentBirthDateInput)
-setData.parentEmail(parentEmailInput)
-setData.parentMobile(parentMobileInput)
-setData.parentGender(parentGenderInput)
-setData.setSumTotalFees(sumTotalFees)
-
-        ///////////////////////////////////////////////////
-
-        setParentNameSaved(parentNameInput)
-        setParentBirthDateSaved(parentBirthDateInput)
-        setParentEmailSaved(parentEmailInput)
-        setParentMobileSaved(parentMobileInput)
-        setParentGenderSaved(parentGenderInput)
-      //  setChild1FeesSaved(child1FeesInput)
-        setChild1SchoolSaved(child1SchoolInput)
-      //  setChild2FeesSaved(child2FeesInput)
-        setChild2SchoolSaved(child2SchoolInput)
-      //  setChild3FeesSaved(child3FeesInput)
-        setChild3SchoolSaved(child3SchoolInput)
-      //  setChild4FeesSaved(child4FeesInput)
-        setChild4SchoolSaved(child4SchoolInput)
-        setSumTotalFeesSaved(sumTotalFees)
+    const formSubmit = (e) => {
         e.preventDefault()
+
+        
+            console.log(parentNameInput, parentBirthDateInput, parentEmailInput, parentMobileInput, parentGenderInput, sumTotalFees);
     }
 
-    return <div className="mx-10 mt-24 sm:mx-20">
+    return <div className="mx-10 mt-5 sm:mx-20 lg:mt-24">
 
         <form>
 
             <div className="lg:flex lg:flex-row-reverse ">
-                <img src="/pics/registerPic.jpeg" alt="school-pic" className="home-img" />
+                <img src="/pics/registerPic.jpeg" alt="school-pic" className="home-img mx-auto" />
 
                 <ParentInformation
                     parentNameInput={parentNameInput}
@@ -163,9 +108,17 @@ setData.setSumTotalFees(sumTotalFees)
                 <p className="col-span-1"></p>
             </div>
 
-            <div className="flex justify-end">
-                <button onClick={handleClick} className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
-            </div>
+            {accepted ? <Link to="/proposal">
+                <div className="flex justify-end">
+                    <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
+                </div>
+            </Link> :
+                <Link to="">
+                    <div className="flex justify-end">
+                        <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
+                    </div>
+                </Link>}
+
         </form>
 
     </div>

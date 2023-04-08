@@ -29,7 +29,6 @@ function ChildInformation(props) {
                 sumInsured={props.child1TotalFeesInput}
                 schoolChange={(e) => props.setChild1SchoolInput(e.target.value)}
                 schoolValue={props.child1SchoolInput}
-                schoolName=""
             />
             <ChildForm
                 label="School Fees (Child 2)"

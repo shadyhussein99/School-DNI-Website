@@ -12,13 +12,23 @@ input {
     @apply text-lg my-3 border border-gray-300 p-1 px-4 rounded-md text-gray-500
 }
 
+.nav-a {
+    @apply mr-8 text-xl font-semibold 
+}
 
-.home-img {
-    width: 40%;
+.nav-li {
+    @apply hover:-translate-x-1 hover:-translate-y-1 transition ease-in-out duration-300
 }
 
 /* ChildInformation component */
 
 .child-info-h5 {
     @apply col-span-1 font-semibold underline decoration-solid mx-auto
+}
+
+@media (min-width: 1024px) {
+    .home-img {
+        width: 40%;
+    }
+    
 }

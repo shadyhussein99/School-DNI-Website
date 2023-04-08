@@ -41,8 +41,8 @@ function AllInformation() {
     const formSubmit = (e) => {
         e.preventDefault()
 
-        
-            console.log(parentNameInput, parentBirthDateInput, parentEmailInput, parentMobileInput, parentGenderInput, sumTotalFees);
+
+        console.log(parentNameInput, parentBirthDateInput, parentEmailInput, parentMobileInput, parentGenderInput, sumTotalFees);
     }
 
     return <div className="mx-10 mt-5 sm:mx-20 lg:mt-24">
@@ -113,6 +113,7 @@ function AllInformation() {
                     <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
                 </div>
             </Link> :
+
                 <Link to="">
                     <div className="flex justify-end">
                         <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>

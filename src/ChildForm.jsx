@@ -11,7 +11,7 @@ function ChildForm(props) {
 
         <p className="col-span-1 m-auto text-lg font-semibold">{props.sumInsured}</p>
 
-        <input className="col-span-1" onChange={props.schoolChange} type="text" value={props.schoolValue} />
+        <input className="col-span-1" name={props.schoolName} onChange={props.schoolChange} type="text" value={props.schoolValue} />
 
     </div>
 }

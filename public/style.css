@@ -11,3 +11,14 @@ label {
 input {
     @apply text-lg my-3 border border-gray-300 p-1 px-4 rounded-md text-gray-500
 }
+
+
+.home-img {
+    width: 40%;
+}
+
+/* ChildInformation component */
+
+.child-info-h5 {
+    @apply col-span-1 font-semibold underline decoration-solid mx-auto
+}

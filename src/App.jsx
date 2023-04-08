@@ -1,14 +1,15 @@
 // First rendered Component (Registeration page)
 
 import React from "react"
+import Navbar from "./Navbar"
 import AllInformation from "./AllInformation"
 
 function App() {
 
   return (
-    <div className="mx-10">
+    <div className="">
 
-      <img src="/pics/registerPic.jpeg" alt="school-pic" />
+      <Navbar />
 
       <AllInformation />
 

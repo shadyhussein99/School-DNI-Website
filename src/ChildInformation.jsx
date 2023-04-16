@@ -22,53 +22,64 @@ function ChildInformation(props) {
                 label="School Fees (Child 1)"
                 feesValue={props.child1FeesInput}
                 feesChange={(e) => {
-                    props.setChild1FeesInput(e.target.value)
+                    const { name, value } = e.target
+                    props.setData({ ...props.data, [name]: value })
                     props.setChild1TotalFeesInput(5 * e.target.value)
                     props.setSumTotalFees((5 * e.target.value) + props.child2TotalFeesInput + props.child3TotalFeesInput + props.child4TotalFeesInput)
                 }}
                 sumInsured={props.child1TotalFeesInput}
-                schoolChange={(e) => props.setChild1SchoolInput(e.target.value)}
+                schoolChange={props.handleChange}
                 schoolValue={props.child1SchoolInput}
+                feesInputName="child1Fees"
+                schoolInputName="child1School"
             />
             <ChildForm
                 label="School Fees (Child 2)"
                 feesValue={props.child2FeesInput}
                 feesChange={(e) => {
-                    props.setChild2FeesInput(e.target.value)
+                    const { name, value } = e.target
+                    props.setData({ ...props.data, [name]: value })
                     props.setChild2TotalFeesInput(5 * e.target.value)
                     props.setSumTotalFees((5 * e.target.value) + props.child1TotalFeesInput + props.child3TotalFeesInput + props.child4TotalFeesInput)
                 }}
                 sumInsured={props.child2TotalFeesInput}
-                schoolChange={(e) => props.setChild2SchoolInput(e.target.value)}
+                schoolChange={props.handleChange}
                 schoolValue={props.child2SchoolInput}
+                feesInputName="child2Fees"
+                schoolInputName="child2School"
             />
             <ChildForm
                 label="School Fees (Child 3)"
                 feesValue={props.child3FeesInput}
                 feesChange={(e) => {
-                    props.setChild3FeesInput(e.target.value)
+                    const { name, value } = e.target
+                    props.setData({ ...props.data, [name]: value })
                     props.setChild3TotalFeesInput(5 * e.target.value)
                     props.setSumTotalFees((5 * e.target.value) + props.child1TotalFeesInput + props.child2TotalFeesInput + props.child4TotalFeesInput)
                 }}
                 sumInsured={props.child3TotalFeesInput}
-                schoolChange={(e) => props.setChild3SchoolInput(e.target.value)}
+                schoolChange={props.handleChange}
                 schoolValue={props.child3SchoolInput}
+                feesInputName="child3Fees"
+                schoolInputName="child3School"
             />
             <ChildForm
                 label="School Fees (Child 4)"
                 feesValue={props.child4FeesInput}
                 feesChange={(e) => {
-                    props.setChild4FeesInput(e.target.value)
+                    const { name, value } = e.target
+                    props.setData({ ...props.data, [name]: value })
                     props.setChild4TotalFeesInput(5 * e.target.value)
                     props.setSumTotalFees((5 * e.target.value) + props.child1TotalFeesInput + props.child2TotalFeesInput + props.child3TotalFeesInput)
                 }}
                 sumInsured={props.child4TotalFeesInput}
-                schoolChange={(e) => props.setChild4SchoolInput(e.target.value)}
+                schoolChange={props.handleChange}
                 schoolValue={props.child4SchoolInput}
+                feesInputName="child4Fees"
+                schoolInputName="child4School"
             />
 
         </div>
-
     </div>
 }
 

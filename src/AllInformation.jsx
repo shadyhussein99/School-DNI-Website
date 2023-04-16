@@ -11,33 +11,29 @@ function AllInformation() {
         parentBirthDate: "",
         parentEmail: "",
         parentPhone: "",
-        parentGender: "Male"
+        parentGender: "Male",
+        child1Fees: "",
+        child1School: "",
+        child2Fees: "",
+        child2School: "",
+        child3Fees: "",
+        child3School: "",
+        child4Fees: "",
+        child4School: ""
     })
 
     //  Childs information input stats
 
-    const [child1FeesInput, setChild1FeesInput] = useState("")        // Tracks child 1 fees input
-    const [child1SchoolInput, setChild1SchoolInput] = useState("")    // Tracks child 1 school input
-    const [child1TotalFeesInput, setChild1TotalFeesInput] = useState(0)        // Tracks child 1 total fees input
-
-    const [child2FeesInput, setChild2FeesInput] = useState("")        // Tracks child 2 fees input
-    const [child2SchoolInput, setChild2SchoolInput] = useState("")    // Tracks child 2 school input
-    const [child2TotalFeesInput, setChild2TotalFeesInput] = useState(0)        // Tracks child 2 total fees input
-
-    const [child3FeesInput, setChild3FeesInput] = useState("")        // Tracks child 3 fees input
-    const [child3SchoolInput, setChild3SchoolInput] = useState("")    // Tracks child 3 school input
-    const [child3TotalFeesInput, setChild3TotalFeesInput] = useState(0)        // Tracks child 3 total fees input
-
-    const [child4FeesInput, setChild4FeesInput] = useState("")        // Tracks child 4 fees input
-    const [child4SchoolInput, setChild4SchoolInput] = useState("")    // Tracks child 4 school input
-    const [child4TotalFeesInput, setChild4TotalFeesInput] = useState(0)        // Tracks child 4 total fees input
-
-    const [sumTotalFees, setSumTotalFees] = useState(0)
+    const [child1TotalFeesInput, setChild1TotalFeesInput] = useState(0)        // Child 1 total fees in 5 years
+    const [child2TotalFeesInput, setChild2TotalFeesInput] = useState(0)        // Child 2 total fees in 5 years
+    const [child3TotalFeesInput, setChild3TotalFeesInput] = useState(0)        // Child 3 total fees in 5 years
+    const [child4TotalFeesInput, setChild4TotalFeesInput] = useState(0)        // Child 4 total fees in 5 years
+    const [sumTotalFees, setSumTotalFees] = useState(0)                       // Total sum for all children fees for 5 years
 
 
     const handleChange = (e) => {
-        const {name, value} = e.target
-       setData({...data, [name]: value})     
+        const { name, value } = e.target
+        setData({ ...data, [name]: value })
     }
     console.log(data);
     const formSubmit = (e) => {
@@ -63,35 +59,29 @@ function AllInformation() {
             </div>
 
             <ChildInformation
-                child1FeesInput={child1FeesInput}
-                setChild1FeesInput={setChild1FeesInput}
-                setChild1SchoolInput={setChild1SchoolInput}
-                child1SchoolInput={child1SchoolInput}
+                child1FeesInput={data.child1Fees}
+                child1SchoolInput={data.child1School}
                 child1TotalFeesInput={child1TotalFeesInput}
                 setChild1TotalFeesInput={setChild1TotalFeesInput}
 
-                child2FeesInput={child2FeesInput}
-                setChild2FeesInput={setChild2FeesInput}
-                setChild2SchoolInput={setChild2SchoolInput}
-                child2SchoolInput={child2SchoolInput}
+                child2FeesInput={data.child2Fees}
+                child2SchoolInput={data.child2School}
                 child2TotalFeesInput={child2TotalFeesInput}
                 setChild2TotalFeesInput={setChild2TotalFeesInput}
 
-                child3FeesInput={child3FeesInput}
-                setChild3FeesInput={setChild3FeesInput}
-                setChild3SchoolInput={setChild3SchoolInput}
-                child3SchoolInput={child3SchoolInput}
+                child3FeesInput={data.child3Fees}
+                child3SchoolInput={data.child3School}
                 child3TotalFeesInput={child3TotalFeesInput}
                 setChild3TotalFeesInput={setChild3TotalFeesInput}
 
-                child4FeesInput={child4FeesInput}
-                setChild4FeesInput={setChild4FeesInput}
-                setChild4SchoolInput={setChild4SchoolInput}
-                child4SchoolInput={child4SchoolInput}
+                child4FeesInput={data.child4Fees}
+                child4SchoolInput={data.child4School}
                 child4TotalFeesInput={child4TotalFeesInput}
                 setChild4TotalFeesInput={setChild4TotalFeesInput}
 
-                sumTotalFees={sumTotalFees}
+                data={data}
+                setData={setData}
+                handleChange={handleChange}
                 setSumTotalFees={setSumTotalFees}
             />
 

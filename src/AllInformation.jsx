@@ -11,7 +11,7 @@ function AllInformation() {
         parentBirthDate: "",
         parentEmail: "",
         parentPhone: "",
-        parentGender: ""
+        parentGender: "Male"
     })
 
     //  Childs information input stats
@@ -34,11 +34,15 @@ function AllInformation() {
 
     const [sumTotalFees, setSumTotalFees] = useState(0)
 
+
+    const handleChange = (e) => {
+        const {name, value} = e.target
+       setData({...data, [name]: value})     
+    }
+    console.log(data);
     const formSubmit = (e) => {
         e.preventDefault()
 
-
-        console.log(parentNameInput, parentBirthDateInput, parentEmailInput, parentMobileInput, parentGenderInput, sumTotalFees);
     }
 
     return <div className="mx-10 mt-5 sm:mx-20 lg:mt-24">
@@ -49,16 +53,12 @@ function AllInformation() {
                 <img src="/pics/registerPic.jpeg" alt="school-pic" className="home-img mx-auto" />
 
                 <ParentInformation
-                    parentNameInput={parentNameInput}
-                    setParentNameInput={setParentNameInput}
-                    parentBirthDateInput={parentBirthDateInput}
-                    setParentBirthDateInput={setParentBirthDateInput}
-                    parentEmailInput={parentEmailInput}
-                    setParentEmailInput={setParentEmailInput}
-                    parentMobileInput={parentMobileInput}
-                    setParentMobileInput={setParentMobileInput}
-                    parentGenderInput={parentGenderInput}
-                    setParentGenderInput={setParentGenderInput}
+                    parentNameInput={data.parentName}
+                    parentBirthDateInput={data.parentBirthDate}
+                    parentEmailInput={data.parentEmail}
+                    parentPhoneInput={data.parentPhone}
+                    parentGenderInput={data.parentGender}
+                    handleChange={handleChange}
                 />
             </div>
 

@@ -33,6 +33,7 @@ function ChildInformation(props) {
                 feesInputName="child1Fees"
                 schoolInputName="child1School"
             />
+
             <ChildForm
                 label="School Fees (Child 2)"
                 feesValue={props.child2FeesInput}
@@ -48,6 +49,7 @@ function ChildInformation(props) {
                 feesInputName="child2Fees"
                 schoolInputName="child2School"
             />
+
             <ChildForm
                 label="School Fees (Child 3)"
                 feesValue={props.child3FeesInput}
@@ -63,6 +65,7 @@ function ChildInformation(props) {
                 feesInputName="child3Fees"
                 schoolInputName="child3School"
             />
+            
             <ChildForm
                 label="School Fees (Child 4)"
                 feesValue={props.child4FeesInput}

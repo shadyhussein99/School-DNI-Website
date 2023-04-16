@@ -1,6 +1,7 @@
 //  Component containing all information about Parent and Childs
 
 import React, { useState } from "react";
+import axios from "axios";
 import ParentInformation from "./ParentInformation";
 import ChildInformation from "./ChildInformation";
 
@@ -35,15 +36,17 @@ function AllInformation() {
         const { name, value } = e.target
         setData({ ...data, [name]: value })
     }
-    console.log(data);
+
     const formSubmit = (e) => {
         e.preventDefault()
-
+        axios.post(`https://c0b2-197-36-132-158.ngrok-free.app/api/InsuranceHome/AddNewInsure`, {
+            ...data, totalChildrenFees: sumTotalFees
+        })
     }
 
     return <div className="mx-10 mt-5 sm:mx-20 lg:mt-24">
 
-        <form>
+        <form onSubmit={formSubmit}>
 
             <div className="lg:flex lg:flex-row-reverse ">
                 <img src="/pics/registerPic.jpeg" alt="school-pic" className="home-img mx-auto" />
@@ -95,7 +98,7 @@ function AllInformation() {
             </div>
 
             <div className="flex justify-end">
-                <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
+                <button type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
             </div>
 
         </form>

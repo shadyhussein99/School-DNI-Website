@@ -36,7 +36,7 @@ function AllInformation() {
 
     const [sumTotalFees, setSumTotalFees] = useState(0)
 
-    const [accepted, setAccepted] = useState(false)
+    const [accepted, setAccepted] = useState(false)    
 
     const formSubmit = (e) => {
         e.preventDefault()

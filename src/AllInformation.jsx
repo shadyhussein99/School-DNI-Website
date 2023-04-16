@@ -1,20 +1,18 @@
 //  Component containing all information about Parent and Childs
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import ParentInformation from "./ParentInformation";
 import ChildInformation from "./ChildInformation";
 
 function AllInformation() {
 
-    //  Parent information input stats
-
-    const [parentNameInput, setParentNameInput] = useState("")             // Tracks Parent Name input
-    const [parentBirthDateInput, setParentBirthDateInput] = useState("")   // Tracks Parent Birth Date input
-    const [parentEmailInput, setParentEmailInput] = useState("")           // Tracks Parent Email input
-    const [parentMobileInput, setParentMobileInput] = useState("")         // Tracks Parent Mobile input
-    const [parentGenderInput, setParentGenderInput] = useState("Male")         // Tracks Parent Gender input
-
+    const [data, setData] = useState({
+        parentName: "",
+        parentBirthDate: "",
+        parentEmail: "",
+        parentPhone: "",
+        parentGender: ""
+    })
 
     //  Childs information input stats
 
@@ -35,8 +33,6 @@ function AllInformation() {
     const [child4TotalFeesInput, setChild4TotalFeesInput] = useState(0)        // Tracks child 4 total fees input
 
     const [sumTotalFees, setSumTotalFees] = useState(0)
-
-    const [accepted, setAccepted] = useState(false)    
 
     const formSubmit = (e) => {
         e.preventDefault()
@@ -108,17 +104,9 @@ function AllInformation() {
                 <p className="col-span-1"></p>
             </div>
 
-            {accepted ? <Link to="/proposal">
-                <div className="flex justify-end">
-                    <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
-                </div>
-            </Link> :
-
-                <Link to="">
-                    <div className="flex justify-end">
-                        <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
-                    </div>
-                </Link>}
+            <div className="flex justify-end">
+                <button onClick={formSubmit} type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
+            </div>
 
         </form>
 

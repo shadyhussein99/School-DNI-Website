@@ -18,6 +18,8 @@ function ParentInformation(props) {
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentName"
+                errors={props.errors}
+                errorName="parentName"
             />
             <ParentForm
                 label="Date of Birth"
@@ -26,6 +28,8 @@ function ParentInformation(props) {
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentBirthDate"
+                errors={props.errors}
+                errorName="parentBirthDate"
             />
             <ParentForm
                 label="Email"
@@ -34,6 +38,8 @@ function ParentInformation(props) {
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentEmail"
+                errors={props.errors}
+                errorName="parentBirthDate"
             />
             <ParentForm
                 label="Mobile No"
@@ -42,6 +48,8 @@ function ParentInformation(props) {
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentPhone"
+                errors={props.errors}
+                errorName="parentBirthDate"
             />
 
             <div className="grid grid-cols-3 my-3 md:grid-cols-4 xl:grid-cols-5">

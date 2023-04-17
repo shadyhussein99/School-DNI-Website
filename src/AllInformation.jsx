@@ -34,10 +34,10 @@ function AllInformation() {
 
 
     const schema = yup.object().shape({
-        parent: yup.string().required(),
-        parentBirthDate: yup.date().required(),
-        parentEmail: yup.string().email().required(),
-        parentPhone: yup.number().positive().integer().required(),
+        parentName: yup.string().matches(/^[A-Za-z]+$/, "*please enter a valid name").required("*Name is required"),
+        parentBirthDate: yup.string().required("*Birth date is required"),
+        parentEmail: yup.string().email("*please enter a valid email").required("*Email is required"),
+        parentPhone: yup.number().typeError("*Phone number is required").positive("*please enter a valid phone number").integer("please enter a valid phone number").required("*Phone number is required"),
         parentGender: yup.string().required()
     })
 
@@ -71,6 +71,7 @@ function AllInformation() {
                     parentPhoneValue={data.parentPhone}
                     handleChange={handleChange}
                     register={register}
+                    errors={errors}
                 />
             </div>
 

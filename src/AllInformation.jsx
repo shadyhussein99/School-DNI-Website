@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+import { useForm } from "react-hook-form";
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"   // This function helps in integration between react-hook-form and yup
 import ParentInformation from "./ParentInformation";
 import ChildInformation from "./ChildInformation";
 
@@ -23,8 +26,6 @@ function AllInformation() {
         child4School: ""
     })
 
-    //  Childs information input stats
-
     const [child1TotalFeesInput, setChild1TotalFeesInput] = useState(0)        // Child 1 total fees in 5 years
     const [child2TotalFeesInput, setChild2TotalFeesInput] = useState(0)        // Child 2 total fees in 5 years
     const [child3TotalFeesInput, setChild3TotalFeesInput] = useState(0)        // Child 3 total fees in 5 years
@@ -32,12 +33,24 @@ function AllInformation() {
     const [sumTotalFees, setSumTotalFees] = useState(0)                       // Total sum for all children fees for 5 years
 
 
+    const schema = yup.object().shape({
+        parent: yup.string().required(),
+        parentBirthDate: yup.date().required(),
+        parentEmail: yup.string().email().required(),
+        parentPhone: yup.number().positive().integer().required(),
+        parentGender: yup.string().required()
+    })
+
+    const { register, handleSubmit, formState: {errors} } = useForm({
+        resolver: yupResolver(schema)      // This for integration between react-hook-form and yup
+    })
+
     const handleChange = (e) => {
         const { name, value } = e.target
         setData({ ...data, [name]: value })
     }
 
-    const formSubmit = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault()
         axios.post(`https://c0b2-197-36-132-158.ngrok-free.app/api/InsuranceHome/AddNewInsure`, {
             ...data, totalChildrenFees: sumTotalFees
@@ -46,18 +59,18 @@ function AllInformation() {
 
     return <div className="mx-10 mt-5 sm:mx-20 lg:mt-24">
 
-        <form onSubmit={formSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
 
             <div className="lg:flex lg:flex-row-reverse ">
                 <img src="/pics/registerPic.jpeg" alt="school-pic" className="home-img mx-auto" />
 
                 <ParentInformation
-                    parentNameInput={data.parentName}
-                    parentBirthDateInput={data.parentBirthDate}
-                    parentEmailInput={data.parentEmail}
-                    parentPhoneInput={data.parentPhone}
-                    parentGenderInput={data.parentGender}
+                    parentNameValue={data.parentName}
+                    parentBirthDateValue={data.parentBirthDate}
+                    parentEmailValue={data.parentEmail}
+                    parentPhoneValue={data.parentPhone}
                     handleChange={handleChange}
+                    register={register}
                 />
             </div>
 

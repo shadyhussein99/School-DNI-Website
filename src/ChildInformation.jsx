@@ -20,7 +20,6 @@ function ChildInformation(props) {
 
             <ChildForm
                 label="School Fees (Child 1)"
-                feesValue={props.child1FeesInput}
                 feesChange={(e) => {
                     const { name, value } = e.target
                     props.setData({ ...props.data, [name]: value })
@@ -29,14 +28,16 @@ function ChildInformation(props) {
                 }}
                 sumInsured={props.child1TotalFeesInput}
                 schoolChange={props.handleChange}
-                schoolValue={props.child1SchoolInput}
                 feesInputName="child1Fees"
                 schoolInputName="child1School"
+                register={props.register}
+                registerFeesName=""
+                registerSchoolName=""
+                errors={props.errors}
             />
 
             <ChildForm
                 label="School Fees (Child 2)"
-                feesValue={props.child2FeesInput}
                 feesChange={(e) => {
                     const { name, value } = e.target
                     props.setData({ ...props.data, [name]: value })
@@ -45,14 +46,16 @@ function ChildInformation(props) {
                 }}
                 sumInsured={props.child2TotalFeesInput}
                 schoolChange={props.handleChange}
-                schoolValue={props.child2SchoolInput}
                 feesInputName="child2Fees"
                 schoolInputName="child2School"
+                register={props.register}
+                registerFeesName=""
+                registerSchoolName=""
+                errors={props.errors}
             />
 
             <ChildForm
                 label="School Fees (Child 3)"
-                feesValue={props.child3FeesInput}
                 feesChange={(e) => {
                     const { name, value } = e.target
                     props.setData({ ...props.data, [name]: value })
@@ -61,14 +64,16 @@ function ChildInformation(props) {
                 }}
                 sumInsured={props.child3TotalFeesInput}
                 schoolChange={props.handleChange}
-                schoolValue={props.child3SchoolInput}
                 feesInputName="child3Fees"
                 schoolInputName="child3School"
+                register={props.register}
+                registerFeesName=""
+                registerSchoolName=""
+                errors={props.errors}
             />
             
             <ChildForm
                 label="School Fees (Child 4)"
-                feesValue={props.child4FeesInput}
                 feesChange={(e) => {
                     const { name, value } = e.target
                     props.setData({ ...props.data, [name]: value })
@@ -77,9 +82,12 @@ function ChildInformation(props) {
                 }}
                 sumInsured={props.child4TotalFeesInput}
                 schoolChange={props.handleChange}
-                schoolValue={props.child4SchoolInput}
                 feesInputName="child4Fees"
                 schoolInputName="child4School"
+                register={props.register}
+                registerFeesName=""
+                registerSchoolName=""
+                errors={props.errors}
             />
 
         </div>

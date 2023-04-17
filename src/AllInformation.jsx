@@ -65,10 +65,6 @@ function AllInformation() {
                 <img src="/pics/registerPic.jpeg" alt="school-pic" className="home-img mx-auto" />
 
                 <ParentInformation
-                    parentNameValue={data.parentName}
-                    parentBirthDateValue={data.parentBirthDate}
-                    parentEmailValue={data.parentEmail}
-                    parentPhoneValue={data.parentPhone}
                     handleChange={handleChange}
                     register={register}
                     errors={errors}
@@ -76,23 +72,17 @@ function AllInformation() {
             </div>
 
             <ChildInformation
-                child1FeesInput={data.child1Fees}
-                child1SchoolInput={data.child1School}
+
+
                 child1TotalFeesInput={child1TotalFeesInput}
                 setChild1TotalFeesInput={setChild1TotalFeesInput}
 
-                child2FeesInput={data.child2Fees}
-                child2SchoolInput={data.child2School}
                 child2TotalFeesInput={child2TotalFeesInput}
                 setChild2TotalFeesInput={setChild2TotalFeesInput}
 
-                child3FeesInput={data.child3Fees}
-                child3SchoolInput={data.child3School}
                 child3TotalFeesInput={child3TotalFeesInput}
                 setChild3TotalFeesInput={setChild3TotalFeesInput}
 
-                child4FeesInput={data.child4Fees}
-                child4SchoolInput={data.child4School}
                 child4TotalFeesInput={child4TotalFeesInput}
                 setChild4TotalFeesInput={setChild4TotalFeesInput}
 
@@ -100,6 +90,8 @@ function AllInformation() {
                 setData={setData}
                 handleChange={handleChange}
                 setSumTotalFees={setSumTotalFees}
+                register={register}
+                errors={errors}
             />
 
             <hr />

@@ -14,47 +14,43 @@ function ParentInformation(props) {
             <ParentForm
                 label="Parent Name"
                 placeholder="Parent Name"
-                type="text"             
+                type="text"
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentName"
                 errors={props.errors}
-                errorName="parentName"
             />
             <ParentForm
                 label="Date of Birth"
                 placeholder=""
-                type="date"               
+                type="date"
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentBirthDate"
                 errors={props.errors}
-                errorName="parentBirthDate"
             />
             <ParentForm
                 label="Email"
                 placeholder="Email"
-                type="email"             
+                type="email"
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentEmail"
                 errors={props.errors}
-                errorName="parentBirthDate"
             />
             <ParentForm
                 label="Mobile No"
                 placeholder="Mobile Number"
-                type="number"               
+                type="number"
                 handleChange={props.handleChange}
                 register={props.register}
                 registerName="parentPhone"
                 errors={props.errors}
-                errorName="parentBirthDate"
             />
 
             <div className="grid grid-cols-3 my-3 md:grid-cols-4 xl:grid-cols-5">
                 <label className="col-span-1">Gender</label>
-                <select className="text-lg my-3 border border-gray-300 p-1 px-4 rounded-md text-gray-500 col-span-2" {...props.register("parentGender", {onChange: props.handleChange})}>
+                <select className="text-lg my-3 border border-gray-300 p-1 px-4 rounded-md text-gray-500 col-span-2" {...props.register("parentGender", { onChange: props.handleChange })}>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>

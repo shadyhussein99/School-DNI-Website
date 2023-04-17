@@ -31,8 +31,6 @@ function ChildInformation(props) {
                 feesInputName="child1Fees"
                 schoolInputName="child1School"
                 register={props.register}
-                registerFeesName=""
-                registerSchoolName=""
                 errors={props.errors}
             />
 
@@ -49,8 +47,6 @@ function ChildInformation(props) {
                 feesInputName="child2Fees"
                 schoolInputName="child2School"
                 register={props.register}
-                registerFeesName=""
-                registerSchoolName=""
                 errors={props.errors}
             />
 
@@ -67,8 +63,6 @@ function ChildInformation(props) {
                 feesInputName="child3Fees"
                 schoolInputName="child3School"
                 register={props.register}
-                registerFeesName=""
-                registerSchoolName=""
                 errors={props.errors}
             />
             
@@ -85,8 +79,6 @@ function ChildInformation(props) {
                 feesInputName="child4Fees"
                 schoolInputName="child4School"
                 register={props.register}
-                registerFeesName=""
-                registerSchoolName=""
                 errors={props.errors}
             />
 

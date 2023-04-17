@@ -32,16 +32,56 @@ function AllInformation() {
     const [child4TotalFeesInput, setChild4TotalFeesInput] = useState(0)        // Child 4 total fees in 5 years
     const [sumTotalFees, setSumTotalFees] = useState(0)                       // Total sum for all children fees for 5 years
 
-
+    // Form validation schema
     const schema = yup.object().shape({
-        parentName: yup.string().matches(/^[A-Za-z]+$/, "*please enter a valid name").required("*Name is required"),
+        parentName: yup.string().matches(/^[A-Za-z]+$/, "*Please enter a valid name").required("*Name is required"),
         parentBirthDate: yup.string().required("*Birth date is required"),
-        parentEmail: yup.string().email("*please enter a valid email").required("*Email is required"),
-        parentPhone: yup.number().typeError("*Phone number is required").positive("*please enter a valid phone number").integer("please enter a valid phone number").required("*Phone number is required"),
-        parentGender: yup.string().required()
+        parentEmail: yup.string().email("*Please enter a valid email").required("*Email is required"),
+        parentPhone: yup.number().typeError("*Phone number is required").positive("*Please enter a valid phone number").integer("Please enter a valid phone number").required("*Phone number is required"),
+        child1Fees: yup.number().typeError("*Fees is required").positive("*Please enter a valid number").required("*Fees is required"),
+        child1School: yup.string().matches(/^[a-zA-Z0-9]+$/, "Please use letters and numbers only").required("School name is required"),
+        child2Fees: yup.mixed()
+            .nullable()
+            .test("is-number", "*Please enter a valid number", value => {
+                return !value || typeof value === "number".test(value);
+            })
+            .test("is-positive", "*Please enter a valid number", (value) => {
+                return !value || value > 0 .test(value);
+            }),
+        child2School: yup.mixed()
+            .nullable()
+            .test("alphanumeric", "Please use letters and numbers only", value => {
+                return !value || /^[a-zA-Z0-9]+$/.test(value);
+            }),
+        child3Fees: yup.mixed()
+            .nullable()
+            .test("is-number", "*Please enter a valid number", value => {
+                return !value || typeof value === "number".test(value);
+            })
+            .test("is-positive", "*Please enter a valid number", (value) => {
+                return !value || value > 0 .test(value);
+            }),
+        child3School: yup.mixed()
+            .nullable()
+            .test("alphanumeric", "Please use letters and numbers only", value => {
+                return !value || /^[a-zA-Z0-9]+$/.test(value);
+            }),
+        child4Fees: yup.mixed()
+            .nullable()
+            .test("is-number", "*Please enter a valid number", value => {
+                return !value || typeof value === "number".test(value);
+            })
+            .test("is-positive", "*Please enter a valid number", (value) => {
+                return !value || value > 0 .test(value);
+            }),
+        child4School: yup.mixed()
+            .nullable()
+            .test("alphanumeric", "Please use letters and numbers only", value => {
+                return !value || /^[a-zA-Z0-9]+$/.test(value);
+            }),
     })
 
-    const { register, handleSubmit, formState: {errors} } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)      // This for integration between react-hook-form and yup
     })
 

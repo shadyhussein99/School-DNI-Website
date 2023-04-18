@@ -34,12 +34,12 @@ function AllInformation() {
 
     // Form validation schema
     const schema = yup.object().shape({
-        parentName: yup.string().matches(/^[A-Za-z]+$/, "*Please enter a valid name").required("*Name is required"),
+        parentName: yup.string().required("*Name is required").matches(/^[a-zA-Z\s]*$/, "*Please enter a valid name"),
         parentBirthDate: yup.string().required("*Birth date is required"),
-        parentEmail: yup.string().email("*Please enter a valid email").required("*Email is required"),
-        parentPhone: yup.number().typeError("*Phone number is required").positive("*Please enter a valid phone number").integer("Please enter a valid phone number").required("*Phone number is required"),
-        child1Fees: yup.number().typeError("*Fees is required").positive("*Please enter a valid number").required("*Fees is required"),
-        child1School: yup.string().matches(/^[a-zA-Z0-9]+$/, "Please use letters and numbers only").required("School name is required"),
+        parentEmail: yup.string().required("*Email is required").email("*Please enter a valid email"),
+        parentPhone: yup.number().typeError("*Mobile number is required").positive("*Please enter a valid mobile number").integer("Please enter a valid mobile number"),
+        child1Fees: yup.number().typeError("*Fees is required").positive("*Please enter a valid number"),
+        child1School: yup.string().required("School name is required").matches(/^[a-zA-Z0-9\s]+$/, "Please use letters and numbers only"),
         child2Fees: yup.mixed()
             .nullable()
             .test("is-number", "*Please enter a valid number", value => {
@@ -51,7 +51,7 @@ function AllInformation() {
         child2School: yup.mixed()
             .nullable()
             .test("alphanumeric", "Please use letters and numbers only", value => {
-                return !value || /^[a-zA-Z0-9]+$/.test(value);
+                return !value || /^[a-zA-Z0-9\s]+$/.test(value);
             }),
         child3Fees: yup.mixed()
             .nullable()
@@ -64,7 +64,7 @@ function AllInformation() {
         child3School: yup.mixed()
             .nullable()
             .test("alphanumeric", "Please use letters and numbers only", value => {
-                return !value || /^[a-zA-Z0-9]+$/.test(value);
+                return !value || /^[a-zA-Z0-9\s]+$/.test(value);
             }),
         child4Fees: yup.mixed()
             .nullable()
@@ -77,7 +77,7 @@ function AllInformation() {
         child4School: yup.mixed()
             .nullable()
             .test("alphanumeric", "Please use letters and numbers only", value => {
-                return !value || /^[a-zA-Z0-9]+$/.test(value);
+                return !value || /^[a-zA-Z0-9\s]+$/.test(value);
             }),
     })
 

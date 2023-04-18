@@ -20,15 +20,11 @@ function Navbar() {
             <ul className="hidden md:flex md:items-center py-7 ml-auto lg:py-9 lg:mr-10 xl:mr-16">
 
                 <li className="nav-li">
+                    <Link to="/" className="nav-a">Offers</Link>
+                </li>
+
+                <li className="nav-li">
                     <Link to="/" className="nav-a">About Us</Link>
-                </li>
-
-                <li className="nav-li">
-                    <Link to="/" className="nav-a">Login</Link>
-                </li>
-
-                <li className="nav-li">
-                    <Link to="/" className="nav-a">Register</Link>
                 </li>
 
             </ul>
@@ -49,15 +45,11 @@ function Navbar() {
                     <ul className="md:hidden mt-10">
 
                         <li className="nav-li mt-2">
+                            <Link to="/" className="nav-a">Offers</Link>
+                        </li>
+
+                        <li className="nav-li mt-2">
                             <Link to="/" className="nav-a">About Us</Link>
-                        </li>
-
-                        <li className="nav-li mt-2">
-                            <Link to="/" className="nav-a">Login</Link>
-                        </li>
-
-                        <li className="nav-li mt-2">
-                            <Link to="/" className="nav-a">Register</Link>
                         </li>
 
                     </ul>

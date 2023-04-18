@@ -5,18 +5,18 @@ import ChildForm from "./ChildForm";
 
 function ChildInformation(props) {
 
-    return <div className="mt-16">
+    return <section className="mt-16">
 
         <h2 className="text-3xl font-semibold">Children info:</h2>
 
-        <div className="mt-8">
+        <section className="mt-8">
 
-            <div className="grid grid-cols-4">
+            <section className="grid grid-cols-4">
                 <h5 className="child-info-h5"></h5>
                 <h5 className="child-info-h5">Annual fees</h5>
                 <h5 className="child-info-h5">Sum insured</h5>
                 <h5 className="child-info-h5">School name</h5>
-            </div>
+            </section>
 
             <ChildForm
                 label="School Fees (Child 1)"
@@ -82,8 +82,8 @@ function ChildInformation(props) {
                 errors={props.errors}
             />
 
-        </div>
-    </div>
+        </section>
+    </section>
 }
 
 export default ChildInformation

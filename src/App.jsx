@@ -7,13 +7,10 @@ import AllInformation from "./AllInformation"
 function App() {
 
   return (
-    <div className="">
-
+    <main className="">
       <Navbar />
-
       <AllInformation />
-
-    </div>
+    </main>
   )
 }
 

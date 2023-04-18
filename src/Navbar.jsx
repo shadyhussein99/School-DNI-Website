@@ -6,9 +6,9 @@ import { Link } from "react-router-dom"
 
 function Navbar() {
 
-    var [navIconClicked, setNavIconClicked] = useState(false)
+    const [navIconClicked, setNavIconClicked] = useState(false)
 
-    return <div className=" bg-white">
+    return <section className=" bg-white">
 
         <nav className="flex justify-between shadow-xl">
 
@@ -37,7 +37,7 @@ function Navbar() {
 
             {navIconClicked ?
 
-                <div className="py-7 mr-10">
+                <section className="py-7 mr-10">
                     {/* svg of the X icon */}
                     <svg
                         onClick={() => setNavIconClicked(false)}
@@ -61,19 +61,19 @@ function Navbar() {
                         </li>
 
                     </ul>
-                </div> :
-                <div className="py-7 mr-10">   {/* svg of the menu icon */}
+                </section> :
+                <section className="py-7 mr-10">   {/* svg of the menu icon */}
                     <svg
                         onClick={() => setNavIconClicked(true)}
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 cursor-pointer md:hidden">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
-                </div>
+                </section>
             }
 
 
         </nav>
-    </div>
+    </section>
 }
 
 export default Navbar

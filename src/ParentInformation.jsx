@@ -5,11 +5,11 @@ import ParentForm from "./ParentForm";
 
 function ParentInformation(props) {
 
-    return <div className="xl:w-full">
+    return <section className="xl:w-full">
 
         <h2 className="text-3xl font-semibold">Parent info:</h2>
 
-        <div className="mt-8">
+        <section className="mt-8">
 
             <ParentForm
                 label="Parent Name"
@@ -48,17 +48,17 @@ function ParentInformation(props) {
                 errors={props.errors}
             />
 
-            <div className="grid grid-cols-3 my-3 md:grid-cols-4 xl:grid-cols-5">
+            <section className="grid grid-cols-3 my-3 md:grid-cols-4 xl:grid-cols-5">
                 <label className="col-span-1">Gender</label>
                 <select className="text-lg my-3 border border-gray-300 p-1 px-4 rounded-md text-gray-500 col-span-2" {...props.register("parentGender", { onChange: props.handleChange })}>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
-            </div>
+            </section>
 
-        </div>
+        </section>
 
-    </div>
+    </section>
 }
 
 export default ParentInformation

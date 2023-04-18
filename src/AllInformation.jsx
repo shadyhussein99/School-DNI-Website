@@ -97,11 +97,11 @@ function AllInformation() {
         })
     }
 
-    return <div className="mx-10 mt-5 sm:mx-20 lg:mt-24">
+    return <main className="mx-10 mt-5 sm:mx-20 lg:mt-24">
 
         <form onSubmit={handleSubmit(onSubmit)}>
 
-            <div className="lg:flex lg:flex-row-reverse ">
+            <section className="lg:flex lg:flex-row-reverse ">
                 <img src="/pics/registerPic.jpeg" alt="school-pic" className="home-img mx-auto" />
 
                 <ParentInformation
@@ -109,7 +109,7 @@ function AllInformation() {
                     register={register}
                     errors={errors}
                 />
-            </div>
+            </section>
 
             <ChildInformation
 
@@ -136,20 +136,20 @@ function AllInformation() {
 
             <hr />
 
-            <div className="grid grid-cols-4">
+            <section className="grid grid-cols-4">
                 <p className="col-span-1"></p>
                 <p className="col-span-1"></p>
                 <p className=" text-lg font-semibold col-span-1 mx-auto">{sumTotalFees}</p>
                 <p className="col-span-1"></p>
-            </div>
+            </section>
 
-            <div className="flex justify-end">
+            <section className="flex justify-end">
                 <button type="submit" className=" border py-3 px-16 rounded-xl text-lg font-semibold text-white bg-lime-600 mt-8 mb-20 hover:text-lime-600 hover:bg-white hover:border-lime-600 transition ease-in-out duration-300">SUBMIT</button>
-            </div>
+            </section>
 
         </form>
 
-    </div>
+    </main>
 }
 
 export default AllInformation

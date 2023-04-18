@@ -3,7 +3,7 @@
 import React from "react";
 
 function ChildForm(props) {
-    return <div className="grid grid-cols-4 my-3">
+    return <section className="grid grid-cols-4 my-3">
 
         <label className="col-span-1">{props.label}</label>
         <input className="col-span-1" placeholder="Enter fees in AED" type="number" {...props.register(props.feesInputName, {onChange: props.feesChange})}/>
@@ -17,7 +17,7 @@ function ChildForm(props) {
         {props.errors[props.schoolInputName] && (
             <p className="text-red-500">{props.errors[props.schoolInputName].message}</p>)}
 
-    </div>
+    </section>
 }
 
 export default ChildForm
